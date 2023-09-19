@@ -2,11 +2,11 @@
     "verbose": true,
     "ignore": [],
     "watch": [
-        "server/**/*.ts",
-        "server/**/*.js"
+        "server"
     ],
     "execMap": {
         "ts": "ts-node",
         "js": "ts-node"
-    }
+    },
+    "ext":"js,ts,pug"
 }
