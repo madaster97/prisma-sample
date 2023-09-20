@@ -11,7 +11,7 @@ services:
     volumes:
       - devdb:/var/lib/postgresql
     restart: always
-  dev-prisma-postgres-api:
+  dev-app:
     stdin_open: true
     tty: true
     build:
@@ -22,7 +22,7 @@ services:
       - ./server:/usr/src/app/server
       - ./nodemon.json:/usr/src/app/nodemon.json
       - ./prisma:/usr/src/app/prisma
-    container_name: dev-prisma-postgres-api
+    container_name: dev-app
     depends_on:
       - dev-postgres
     ports:

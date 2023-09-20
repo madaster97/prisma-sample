@@ -11,14 +11,14 @@ services:
     volumes:
       - stagedb:/var/lib/postgresql
     restart: always
-  stage-prisma-postgres-api:
+  stage-app:
     stdin_open: true
     tty: true
     build:
       context: .
       dockerfile: Dockerfile
       target: production
-    container_name: stage-prisma-postgres-api
+    container_name: stage-app
     depends_on:
       - stage-postgres
     ports:
