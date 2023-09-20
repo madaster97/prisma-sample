@@ -7,7 +7,7 @@ var debug = require('debug')('prisma-sample:server');
 router.get('/', async function(req, res, next) {
   const allUsers = await prisma.user.findMany();
   debug('Found users: %o', allUsers);
-  const usersText: string[] = allUsers.map((user) => `${user.name} [${user.id}] at ${user.email}`);
+  const usersText: string[] = allUsers.map((user) => `${user.name} [${user.id}] at ${user.notemail}`);
   res.render('users', { title: 'Viewing Users', usersText });
 });
 
