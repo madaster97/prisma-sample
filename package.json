@@ -7,8 +7,11 @@
     "prestart": "npm run build",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 server/public/**/* server/views/* dist/",
-    "build": "npm run clean && tsc -p . && npm run copy-files",
-    "dev": "npx prisma generate && nodemon server/bin/www.js"
+    "build": "npm run clean && prisma generate && tsc -p . && npm run copy-files",
+    "prototype": "prisma migrate db push",
+    "migratedev": "prisma migrate dev",
+    "migratedeploy": "prisma migrate deploy && npm run start",
+    "dev": "prisma generate && nodemon server/bin/www.js"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
