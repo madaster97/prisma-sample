@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "start": "NODE_PATH=./dist node dist/bin/www.js",
-    "prestart": "npm run build",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 server/public/**/* server/views/* dist/",
-    "build": "npm run clean && prisma generate && tsc -p . && npm run copy-files",
+    "build": "npm run clean && tsc -p . && npm run copy-files",
     "prototype": "prisma migrate db push",
     "migratedev": "prisma migrate dev",
     "migratedeploy": "prisma migrate deploy && npm run start",
